@@ -1,5 +1,7 @@
 <template>
-  <h1>{{ vid }}</h1>
+  <div class="flex justify-center align-middle items-center top-0.5">
+    <h1 class="text-white text-2xl absolute top-0.5">{{ vid }}</h1>
+  </div>
 </template>
 
 <script>
@@ -30,14 +32,11 @@ export default defineComponent({
   mounted() {
     const vid = this.$route.query;
     this.vid = vid;
-    //   console.log(this.$route.params) //动态路由的传值
+    //console.log(this.$route.params) //动态路由的传值
     console.log(this.$route.query); //get传值
   },
 });
 </script>
 
 <style scoped>
-h1 {
-  color: white;
-}
 </style>

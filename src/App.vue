@@ -6,7 +6,6 @@
 <script>
 import { defineComponent } from "vue";
 import dock from "./components/Home/MacDock.vue";
-
 export default defineComponent({
   name: "app",
   components: {
@@ -16,6 +15,7 @@ export default defineComponent({
 </script>
 
 <style>
+html,
 body {
   background-color: #1e2228;
   color: #2d333b;

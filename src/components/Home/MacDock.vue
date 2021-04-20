@@ -1,35 +1,15 @@
 <template>
   <div class="glass">
     <div class="dock">
-      <div @click="toHome" class="icon" tabindex="1">
-        <img
-          src="https://cdn3.iconfinder.com/data/icons/luchesa-vol-9/128/Home-512.png"
-        />
-        <div class="title">Home</div>
-      </div>
-      <div @click="toSeries" class="icon" tabindex="1">
-        <img
-          src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/video-128.png"
-        />
-        <div class="title">Series</div>
-      </div>
-      <div class="icon" tabindex="1">
-        <img
-          src="https://cdn3.iconfinder.com/data/icons/back-to-the-future/512/delorean-01-128.png"
-        />
-        <div class="title">Car</div>
-      </div>
-      <div class="icon" tabindex="1">
-        <img
-          src="https://cdn3.iconfinder.com/data/icons/luchesa-vol-9/128/Toy-128.png"
-        />
-        <div class="title">Game</div>
-      </div>
-      <div class="icon" tabindex="1">
-        <img
-          src="https://cdn2.iconfinder.com/data/icons/free-version/128/recycling-128.png"
-        />
-        <div class="title">Animal</div>
+      <div
+        @click="this.$router.push({ path: icon.icon_path })"
+        class="icon"
+        tabindex="1"
+        v-for="(icon, index) in icons"
+        :key="index"
+      >
+        <img :src="icon.icon_img" />
+        <div class="title">{{ icon.icon_name }}</div>
       </div>
     </div>
   </div>
@@ -40,20 +20,40 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "dock",
-  setup() {
-    function toHome() {
-      this.$router.push({
-        path: "/home",
-      });
-    }
-    function toSeries() {
-      this.$router.push({
-        path: "/series",
-      });
-    }
+  data() {
     return {
-      toHome,
-      toSeries,
+      icons: [
+        {
+          icon_name: "Home",
+          icon_img:
+            "https://cdn3.iconfinder.com/data/icons/luchesa-vol-9/128/Home-512.png",
+          icon_path: "/home",
+        },
+        {
+          icon_name: "Series",
+          icon_img:
+            "https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/video-128.png",
+          icon_path: "/series",
+        },
+        {
+          icon_name: "Car",
+          icon_img:
+            "https://cdn3.iconfinder.com/data/icons/back-to-the-future/512/delorean-01-128.png",
+          icon_path: "/home",
+        },
+        {
+          icon_name: "Game",
+          icon_img:
+            "https://cdn3.iconfinder.com/data/icons/luchesa-vol-9/128/Toy-128.png",
+          icon_path: "/home",
+        },
+        {
+          icon_name: "Animal",
+          icon_img:
+            "https://cdn2.iconfinder.com/data/icons/free-version/128/recycling-128.png",
+          icon_path: "/home",
+        },
+      ],
     };
   },
 });
@@ -96,8 +96,6 @@ export default defineComponent({
   transform-style: flat;
   outline: none;
   cursor: default;
-  /* background: rgba(255, 255, 255, 0.18);
-  border-radius: 50%; */
 }
 
 .icon img {

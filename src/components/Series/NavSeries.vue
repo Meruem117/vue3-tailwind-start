@@ -1,20 +1,55 @@
 <template>
-  <div class="header">
-    <nav class="nav">
-      <router-link to="/series/home"> 首页 </router-link>
-      <router-link to="/series"> 犯罪 / 悬疑 </router-link>
-      <router-link to="/series"> 魔幻 / 科幻 </router-link>
-      <router-link to="/series"> 都市 / 情感 </router-link>
-      <router-link to="/series"> 自然 / 历史 </router-link>
-      <router-link to="/series"> 灵异 / 惊悚 </router-link>
-      <router-link to="/series"> 动漫 / 卡通 </router-link>
-    </nav>
-    <div class="search">
+  <div
+    class="flex flex-row flex-nowrap flex-auto w-screen h-16 bg-pan-dark align-middle absolute top-0"
+  >
+    <div
+      class="flex flex-nowrap flex-auto items-center h-full w-auto space-x-1 text-gray-400 tracking-wider justify-end"
+    >
+      <router-link
+        v-for="(nav, index) in seriesNav"
+        :key="index"
+        :to="nav.path"
+        class="block h-full p-4 text-lg hover:text-red-500 hover:border-red-500 transition-all ease-in-out font-whz"
+        :class="{
+          'border-b-4 border-blue-500 text-xl': active == nav.cate,
+        }"
+        @click="selected(nav.cate)"
+        >{{ nav.cate }}</router-link
+      >
+    </div>
+    <div
+      class="flex flex-row-reverse align-middle items-center h-full w-auto py-2 ml-6"
+    >
+      <button
+        class="outline-none focus:outline-none h-4/5 w-12 border-2 border-gray-400 rounded-3xl rounded-l-none hover:border-blue-500"
+      >
+        <svg
+          class="w-6 h-4/5 text-gray-400 cursor-pointer mx-auto hover:text-blue-500"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </button>
       <input
-        type="text"
-        placeholder="Search something..."
-        name="search_content"
+        class="w-auto h-4/5 px-3 border-2 border-r-0 border-gray-400 bg-transparent rounded-xl rounded-r-none text-xl font-twi text-gray-400 placeholder-opacity-70 transition-all ease-in outline-none focus:border-blue-500 focus:outline-none focus:shadow-outline focus:ring-2"
+        type="search"
+        placeholder="Search..."
       />
+    </div>
+    <div
+      class="flex flex-auto flex-nowrap h-full w-auto items-center justify-end mr-8"
+    >
+      <div
+        class="w-12 h-12 float-right bg-cover rounded-full bg-center absolute"
+        style="
+          background-image: url(https://images.unsplash.com/photo-1589310766623-cb9c476330f9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fHBvdHJhaXR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60);
+        "
+      ></div>
     </div>
   </div>
 </template>
@@ -23,63 +58,27 @@
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "navSeries",
+  data() {
+    return {
+      seriesNav: [
+        { cate: "首页", path: "/series/home" },
+        { cate: "犯罪 / 悬疑", path: "/series/home" },
+        { cate: "魔幻 / 科幻", path: "/series/home" },
+        { cate: "都市 / 情感", path: "/series/home" },
+        { cate: "灵异 / 惊悚", path: "/series/home" },
+        { cate: "自然 / 历史", path: "/series/home" },
+        { cate: "动漫 / 卡通", path: "/series/home" },
+      ],
+      active: "首页",
+    };
+  },
+  methods: {
+    selected(cate) {
+      this.active = cate;
+    },
+  },
 });
 </script>
 
 <style scoped>
-.header {
-  width: 100%;
-  height: 60px;
-  position: fixed;
-  top: 0;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  background: #2d333b;
-}
-
-.search {
-  float: left;
-  margin: 16px 5px 10px 15px;
-}
-
-.search input {
-  height: 25px;
-  width: 180px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 5px;
-  color: #cdd9e5;
-  background-color: #1e2228;
-  transition: 0.3s all ease-in-out;
-  transition-delay: 0.1s;
-}
-
-.search input:hover {
-  border-color: #6c97f5;
-}
-
-.search input:focus {
-  width: 240px;
-  border: 1px solid #6c97f5;
-}
-
-.nav {
-  float: left;
-  line-height: 30px;
-  margin: 15px 15px 15px 20%;
-}
-
-.nav a {
-  display: inline;
-  margin-left: 20px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 15px;
-  color: #cdd9e5;
-  font-weight: bold;
-}
-
-.nav a:hover {
-  color: #cd9b9b;
-}
 </style>

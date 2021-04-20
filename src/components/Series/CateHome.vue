@@ -7,13 +7,6 @@
       </router-link>
       <strong class="v-score">{{ v.score }}</strong>
     </div>
-    <div class="v" v-for="(v, index) in series" :key="index">
-      <router-link :to="`/video?vid=${v.video_id}`" class="v-link">
-        <img class="v-img" :src="v.video_img" :alt="v.name_en" />
-        <p class="v-name">{{ v.name_cn }}</p>
-      </router-link>
-      <strong class="v-score">{{ v.score }}</strong>
-    </div>
   </div>
 </template>
 

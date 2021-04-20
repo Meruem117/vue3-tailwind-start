@@ -1,22 +1,35 @@
 <template>
-  <div class="header">
-    <div class="dev">
-      <a href="#">
-        <img src="../../../static/logo.png" />
-      </a>
+  <div
+    class="flex flex-row flex-nowrap flex-auto w-screen h-16 p-2 bg-pan-dark align-middle"
+  >
+    <div
+      class="flex flex-row flex-nowrap flex-auto justify-start items-center align-baseline h-full w-auto"
+    >
+      <img src="../../assets/logo.png" class="w-auto h-full m-2" />
+      <div
+        class="font-twi text-3xl text-gray-400 align-baseline tracking-wider space-x-5 ml-5"
+      >
+        <router-link to="/home" class="hover:text-pink-700 hover:underline"
+          >Home</router-link
+        >
+        <router-link to="/about" class="hover:text-pink-700 hover:underline"
+          >About</router-link
+        >
+        <router-link to="/test" class="hover:text-pink-700 hover:underline"
+          >Test</router-link
+        >
+      </div>
     </div>
-    <div class="search">
-      <input
-        type="text"
-        placeholder="Search something..."
-        name="search_content"
-      />
+    <div
+      class="flex flex-auto flex-nowrap h-full w-auto items-center justify-end mr-8"
+    >
+      <div
+        class="w-12 h-12 float-right bg-cover rounded-full bg-center absolute"
+        style="
+          background-image: url(https://images.unsplash.com/photo-1589310766623-cb9c476330f9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fHBvdHJhaXR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60);
+        "
+      ></div>
     </div>
-    <nav class="nav">
-      <router-link to="/home"> Home </router-link>
-      <router-link to="/home"> About </router-link>
-      <router-link to="/series"> Series </router-link>
-    </nav>
   </div>
 </template>
 
@@ -28,72 +41,4 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.header {
-  width: 100%;
-  height: 60px;
-  position: fixed;
-  top: 0;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  background: #2d333b;
-}
-
-.dev {
-  float: left;
-  line-height: 40px;
-  margin: 10px 10px 10px 25px;
-}
-
-.dev a img {
-  width: 40px;
-  height: 40px;
-  /* border-radius: 50%; */
-  overflow: hidden;
-}
-
-.search {
-  float: left;
-  margin: 16px 5px 10px 15px;
-}
-
-.search input {
-  height: 25px;
-  width: 180px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 5px;
-  color: #cdd9e5;
-  background-color: #1e2228;
-  transition: 0.3s all ease-in-out;
-  transition-delay: 0.1s;
-}
-
-.search input:hover {
-  border-color: #6c97f5;
-}
-
-.search input:focus {
-  width: 240px;
-  border: 1px solid #6c97f5;
-}
-
-.nav {
-  float: left;
-  line-height: 30px;
-  margin: 15px;
-}
-
-.nav a {
-  display: inline;
-  margin-left: 10px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 15px;
-  color: #cdd9e5;
-  font-weight: bold;
-}
-
-.nav a:hover {
-  color: #cd9b9b;
-}
 </style>

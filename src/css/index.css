@@ -1,0 +1,19 @@
+/*! @import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Munsteria';
+    src: url('../../static/font/Munsteria.ttf');
+}
+
+@font-face {
+    font-family: 'Twilight';
+    src: url('../../static/font/Twilight.ttf')
+}
+
+@font-face {
+    font-family: 'wzh';
+    src: url('../../static/font/whz.ttf')
+}

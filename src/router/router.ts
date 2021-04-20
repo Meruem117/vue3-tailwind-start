@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router' //createWebHashHistory
 import home from '../components/Hello.vue'
+import about from '../components/About.vue'
+import test from '../components/Test.vue'
 
 //配置路由
 const router = createRouter({
@@ -18,13 +20,19 @@ const router = createRouter({
       component: () => import('../components/Series.vue'),
       children: [
         { path: '', redirect: '/series/home' },
-        { path: 'home', component: () => import('../components/Series/CateHome.vue') }
+        { path: 'home', component: () => import('../components/Series/CateHome.vue') },
+        { path: 'video', component: () => import('../components/Series/Video.vue') }
       ],
     },
     {
-      path: '/video',
-      name: 'video',
-      component: () => import('../components/Series/Video.vue'),
+      path: '/test',
+      name: 'test',
+      component: test,
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: about,
     },
   ],
 });

@@ -22,7 +22,12 @@ export default defineComponent({
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.hello {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
 h1 {
-  color: var(theme_day_back);
+  color: white;
 }
 </style>
