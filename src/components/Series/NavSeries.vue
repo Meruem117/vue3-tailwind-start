@@ -9,9 +9,10 @@
         v-for="(nav, index) in seriesNav"
         :key="index"
         :to="nav.path"
-        class="block h-full p-4 text-lg hover:text-red-500 hover:border-red-500 transition-all ease-in-out font-whz"
+        class="block h-full p-4 text-xl font-medium hover:text-red-500 hover:border-red-500 transition-all ease-in-out font-zy"
         :class="{
-          'border-b-4 border-blue-500 text-xl': active == nav.cate,
+          'border-b-4 border-blue-500 text-2xl text-blue-400':
+            active == nav.cate,
         }"
         @click="selected(nav.cate)"
         >{{ nav.cate }}</router-link
@@ -21,10 +22,10 @@
       class="flex flex-row-reverse align-middle items-center h-full w-auto py-2 ml-6"
     >
       <button
-        class="outline-none focus:outline-none h-4/5 w-12 border-2 border-gray-400 rounded-3xl rounded-l-none hover:border-blue-500"
+        class="outline-none focus:outline-none h-4/5 w-12 border-2 border-gray-400 rounded-3xl rounded-l-none hover:bg-blue-600"
       >
         <svg
-          class="w-6 h-4/5 text-gray-400 cursor-pointer mx-auto hover:text-blue-500"
+          class="w-6 h-4/5 text-gray-400 cursor-pointer mx-auto"
           fill="none"
           stroke-linecap="round"
           stroke-linejoin="round"
@@ -36,7 +37,7 @@
         </svg>
       </button>
       <input
-        class="w-auto h-4/5 px-3 border-2 border-r-0 border-gray-400 bg-transparent rounded-xl rounded-r-none text-xl font-twi text-gray-400 placeholder-opacity-70 transition-all ease-in outline-none focus:border-blue-500 focus:outline-none focus:shadow-outline focus:ring-2"
+        class="w-auto h-4/5 px-3 border-dashed border-2 border-r-0 border-gray-400 bg-transparent rounded-xl rounded-r-none text-xl font-twi text-gray-400 placeholder-opacity-70 transition-all ease-in-out outline-none focus:border-blue-500 focus:outline-none focus:shadow-outline"
         type="search"
         placeholder="Search..."
       />
@@ -62,12 +63,12 @@ export default defineComponent({
     return {
       seriesNav: [
         { cate: "首页", path: "/series/home" },
-        { cate: "犯罪 / 悬疑", path: "/series/home" },
-        { cate: "魔幻 / 科幻", path: "/series/home" },
-        { cate: "都市 / 情感", path: "/series/home" },
-        { cate: "灵异 / 惊悚", path: "/series/home" },
-        { cate: "自然 / 历史", path: "/series/home" },
-        { cate: "动漫 / 卡通", path: "/series/home" },
+        { cate: "犯罪/悬疑", path: "/series/home" },
+        { cate: "魔幻/科幻", path: "/series/home" },
+        { cate: "都市/情感", path: "/series/home" },
+        { cate: "灵异/惊悚", path: "/series/home" },
+        { cate: "自然/历史", path: "/series/home" },
+        { cate: "动漫/卡通", path: "/series/home" },
       ],
       active: "首页",
     };

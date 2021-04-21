@@ -3,7 +3,7 @@
   <router-view></router-view>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import navSeries from "./Series/NavSeries.vue";
 

@@ -1,63 +1,98 @@
 <template>
   <div
-    class="flex flex-row flex-auto flex-nowrap justify-center mx-10 mt-16 space-x-10 h-content"
+    class="flex flex-row flex-auto flex-nowrap justify-center mt-16 mx-48 space-x-10 h-content w-auto"
   >
-    <div class="g grid grid-cols-3 gap-x-5 gap-y-6 float-left h-72 w-auto">
+    <div
+      class="g grid grid-cols-5 gap-5 float-right overflow-auto justify-items-center h-full w-3/4"
+    >
       <div
-        class="flex flex-col flex-auto flex-nowrap justify-center w-sr"
+        class="flex flex-col flex-auto flex-nowrap h-auto w-sv justify-center"
         v-for="(v, index) in series"
         :key="index"
       >
         <img
           @click="toVideo(v.video_id)"
-          class="w-sr h-sr cursor-pointer rounded-lg border border-gray-700 hover:border-blue-400"
+          class="w-sv h-sv border rounded-xl border-gray-700 hover:border-blue-600 cursor-pointer"
           :src="v.video_img"
           :alt="v.name_en"
-          :title="v.name_en"
+          :title="v.name_cn"
         />
         <div
-          class="flex flex-row flex-auto flex-nowrap w-sr space-x-1 mt-1 tracking-wide font-serif justify-center text-center"
+          class="flex flex-row flex-auto flex-nowrap w-sv space-x-2 mt-1 font-serif justify-center text-center h-auto"
         >
           <p
             @click="toVideo(v.video_id)"
-            class="flex-auto text-gray-400 hover:text-blue-400 text-base cursor-pointer left-0 truncate"
+            class="flex-auto text-gray-400 hover:text-blue-400 text-base cursor-pointer truncate text-right tracking-widest"
           >
             {{ v.name_cn }}
           </p>
-          <strong class="flex-auto right-0 text-red-500 text-2 font-bold">{{
+          <strong class="flex-auto text-red-500 text-2 font-bold text-left">{{
+            v.score
+          }}</strong>
+        </div>
+      </div>
+      <div
+        class="flex flex-col flex-auto flex-nowrap h-auto w-sv justify-center"
+        v-for="(v, index) in series"
+        :key="index"
+      >
+        <img
+          @click="toVideo(v.video_id)"
+          class="w-sv h-sv border rounded-xl border-gray-700 hover:border-blue-600 cursor-pointer"
+          :src="v.video_img"
+          :alt="v.name_en"
+          :title="v.name_cn"
+        />
+        <div
+          class="flex flex-row flex-auto flex-nowrap w-sv space-x-2 mt-1 font-serif justify-center text-center h-auto"
+        >
+          <p
+            @click="toVideo(v.video_id)"
+            class="flex-auto text-gray-400 hover:text-blue-400 text-base cursor-pointer truncate text-right tracking-widest"
+          >
+            {{ v.name_cn }}
+          </p>
+          <strong class="flex-auto text-red-500 text-2 font-bold text-left">{{
             v.score
           }}</strong>
         </div>
       </div>
     </div>
-    <div class="g grid grid-cols-5 gap-5 float-right overflow-auto h-content">
+    <div class="flex flex-col flex-auto flex-nowrap space-y-4 h-auto w-1/4">
       <div
-        class="flex flex-col flex-auto flex-nowrap w-auto h-auto"
-        v-for="(v, index) in series"
-        :key="index"
+        class="w-full h-8 justify-center font-twi tracking-widest text-2xl font-semibold border border-dashed border-green-600 rounded text-green-400 hover:text-gray-600 bg-gradient-to-r hover:from-green-400 hover:to-blue-400"
       >
-        <img
-          @click="toVideo(v.video_id)"
-          class="w-sv h-sv border rounded-xl border-gray-500 hover:border-blue-500"
-          :src="v.video_img"
-          :alt="v.name_en"
-        />
-        <p @click="toVideo(v.video_id)">{{ v.name_cn }}</p>
-        <strong class="">{{ v.score }}</strong>
+        Recommend
       </div>
       <div
-        class="flex flex-col flex-auto flex-nowrap w-auto h-auto"
-        v-for="(v, index) in series"
-        :key="index"
+        class="g grid grid-cols-3 gap-x-5 gap-y-6 justify-items-center h-72 mx-auto"
       >
-        <img
-          @click="toVideo(v.video_id)"
-          class="w-sv h-sv border rounded-xl border-gray-500 hover:border-blue-500"
-          :src="v.video_img"
-          :alt="v.name_en"
-        />
-        <p @click="toVideo(v.video_id)">{{ v.name_cn }}</p>
-        <strong class="">{{ v.score }}</strong>
+        <div
+          class="flex flex-col flex-auto flex-nowrap justify-center w-sr"
+          v-for="(v, index) in series"
+          :key="index"
+        >
+          <img
+            @click="toVideo(v.video_id)"
+            class="w-sr h-sr cursor-pointer rounded-lg border border-gray-700 hover:border-blue-600"
+            :src="v.video_img"
+            :alt="v.name_en"
+            :title="v.name_cn"
+          />
+          <div
+            class="flex flex-row flex-auto flex-nowrap w-sr space-x-1 mt-1 font-serif justify-center text-center"
+          >
+            <p
+              @click="toVideo(v.video_id)"
+              class="flex-auto text-gray-400 hover:text-blue-400 text-base cursor-pointer truncate text-right tracking-widest"
+            >
+              {{ v.name_cn }}
+            </p>
+            <strong class="flex-auto text-red-500 text-2 font-bold text-left">{{
+              v.score
+            }}</strong>
+          </div>
+        </div>
       </div>
     </div>
   </div>

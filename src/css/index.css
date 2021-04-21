@@ -17,3 +17,8 @@
     font-family: 'wzh';
     src: url('../../static/font/whz.ttf')
 }
+
+@font-face {
+    font-family: 'zy';
+    src: url('../../static/font/zy.ttf')
+}

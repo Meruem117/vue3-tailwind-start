@@ -7,6 +7,7 @@ module.exports = {
         'mun': ['Munsteria'],
         'twi': ['Twilight'],
         'whz': ['whz'],
+        'zy': ['zy'],
       },
       colors: {
         'bg-dark': '#1e2228',
