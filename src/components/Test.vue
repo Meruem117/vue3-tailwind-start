@@ -50,14 +50,98 @@
       ></div>
     </div>
   </div>
+
+  <div class="b-game-card w-sv h-sv mx-auto fixed bottom-48">
+    <div
+      class="b-game-card__cover bg-gradient-to-bl from-gray-400 to-gray-900"
+      :style="{ backgroundImage: 'url(' + url + ')' }"
+    ></div>
+  </div>
 </template>
 
 <script>
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "test",
+  data() {
+    return {
+      url:
+        "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1285044771.webp",
+    };
+  },
 });
 </script>
 
 <style scoped>
+.b-game-card {
+  z-index: 1;
+  perspective: 1000px;
+}
+
+.b-game-card__cover {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-size: cover;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  transform-origin: top center;
+  will-change: transform;
+  transform: skewX(0.001deg);
+  transition: transform 0.35s ease-in-out;
+}
+
+.b-game-card__cover::after {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background: linear-gradient(
+    226deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.4) 35%,
+    rgba(255, 255, 255, 0.2) 42%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: translateY(-20%);
+  will-change: transform;
+  transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
+}
+
+.b-game-card:hover .b-game-card__cover {
+  transform: rotateX(7deg) translateY(-6px);
+}
+
+.b-game-card:hover .b-game-card__cover::after {
+  transform: translateY(0%);
+}
+
+.b-game-card::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 12px 12px rgba(0, 0, 0, 0.4);
+  will-change: opacity;
+  transform-origin: top center;
+  transform: skewX(0.001deg);
+  transition: transform 0.35s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.b-game-card:hover::before {
+  opacity: 0.6;
+  transform: rotateX(7deg) translateY(-6px) scale(1.05);
+}
 </style>

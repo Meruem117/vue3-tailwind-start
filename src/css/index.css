@@ -14,11 +14,24 @@
 }
 
 @font-face {
-    font-family: 'wzh';
-    src: url('../../static/font/whz.ttf')
+    font-family: 'type';
+    src: url('../../static/font/Wehm.ttf')
 }
 
 @font-face {
     font-family: 'zy';
     src: url('../../static/font/zy.ttf')
+}
+
+@font-face {
+    font-family: 'regular';
+    src: url('../../static/font/regular.ttf')
+}
+
+.nav {
+    @apply flex flex-row flex-nowrap flex-auto w-screen h-16 bg-pan-dark align-middle fixed top-0;
+}
+
+.content {
+    @apply flex flex-auto flex-nowrap justify-center mt-16 mx-48 space-x-10 h-content w-auto;
 }

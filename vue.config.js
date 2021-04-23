@@ -2,7 +2,7 @@ module.exports = {
     pages: {
         index: {
             entry: 'src/main.ts',
-            title: 'The Stitcher'
+            title: 'Stitcher'
         }
     },
     devServer: {
@@ -17,5 +17,5 @@ module.exports = {
                 }
             }
         }
-    }
+    },
 }

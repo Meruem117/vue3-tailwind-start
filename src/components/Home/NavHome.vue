@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-row flex-nowrap flex-auto w-screen h-16 p-2 bg-pan-dark align-middle"
+    class="nav"
   >
     <div
       class="flex flex-row flex-nowrap flex-auto justify-start items-center align-baseline h-full w-auto"

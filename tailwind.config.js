@@ -6,8 +6,9 @@ module.exports = {
       fontFamily: {
         'mun': ['Munsteria'],
         'twi': ['Twilight'],
-        'whz': ['whz'],
+        'tp': ['type'],
         'zy': ['zy'],
+        're': ['regular'],
       },
       colors: {
         'bg-dark': '#1e2228',

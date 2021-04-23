@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-row flex-nowrap flex-auto w-screen h-16 bg-pan-dark align-middle absolute top-0"
+    class="nav"
   >
     <div
       class="flex flex-nowrap flex-auto items-center h-full w-auto space-x-1 text-gray-400 tracking-wider justify-end"
@@ -9,7 +9,7 @@
         v-for="(nav, index) in seriesNav"
         :key="index"
         :to="nav.path"
-        class="block h-full p-4 text-xl font-medium hover:text-red-500 hover:border-red-500 transition-all ease-in-out font-zy"
+        class="block h-full p-4 text-xl font-medium hover:text-red-500 hover:border-red-500 transition-all ease-in-out font-serif"
         :class="{
           'border-b-4 border-blue-500 text-2xl text-blue-400':
             active == nav.cate,
@@ -47,9 +47,7 @@
     >
       <div
         class="w-12 h-12 float-right bg-cover rounded-full bg-center absolute"
-        style="
-          background-image: url(https://images.unsplash.com/photo-1589310766623-cb9c476330f9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fHBvdHJhaXR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60);
-        "
+        style="background-image: url(../../../static/img/V.jpg)"
       ></div>
     </div>
   </div>

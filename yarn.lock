@@ -969,6 +969,7 @@
   integrity sha512-T7VNNlYVM1SgQ+VsMYhnDkcGmWhQdL0bDyGm5TlQ3GBXnJscEClUUOKduWTmm2zCnvNLC1hc3JpuXjs/nFOc5w==
 
 "@tailwindcss/postcss7-compat@^2.1.0", "tailwindcss@npm:@tailwindcss/postcss7-compat":
+  name tailwindcss
   version "2.1.0"
   resolved "https://registry.npm.taobao.org/@tailwindcss/postcss7-compat/download/@tailwindcss/postcss7-compat-2.1.0.tgz#1393b99d9e60783990baa1b3e2ae69afac12f660"
   integrity sha1-E5O5nZ5geDmQuqGz4q5pr6wS9mA=
@@ -5574,6 +5575,11 @@ jest-worker@^25.4.0:
   dependencies:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
+
+jquery@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.npm.taobao.org/jquery/download/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
+  integrity sha1-xyoJ8Vwb3OFC9J2/EXC9+K2sJHA=
 
 js-message@1.0.7:
   version "1.0.7"
