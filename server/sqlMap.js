@@ -1,7 +1,7 @@
-var sqlMap = {
+const sqlMap = {
     //series
     series: {
-        get: 'select *, year(date) as year from videos'
+        getHome: "select video_id, name_cn, video_img, score from videos where is_latest = 1"
     }
 }
 module.exports = sqlMap;

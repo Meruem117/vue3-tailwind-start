@@ -1,16 +1,16 @@
-var models = require('../db')
-var express = require('express')
-var router = express.Router()
-var mysql = require('mysql')
-var $sql = require('../sqlMap')
+const models = require('../db')
+const express = require('express')
+const router = express.Router()
+const mysql = require('mysql')
+const $sql = require('../sqlMap')
 
 // 连接数据库
-var conn = mysql.createConnection(models.mysql)
+const conn = mysql.createConnection(models.mysql)
 conn.connect()
 
 //series
-router.get('/getSeries', (req, res) => {
-    var sql = $sql.series.get
+router.get('/getHome', (req, res) => {
+    let sql = $sql.series.getHome
     conn.query(sql, function (err, result) {
         if (err) {
             console.log(err)

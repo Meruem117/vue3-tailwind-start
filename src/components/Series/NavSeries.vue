@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="nav"
-  >
+  <div class="nav">
     <div
       class="flex flex-nowrap flex-auto items-center h-full w-auto space-x-1 text-gray-400 tracking-wider justify-end"
     >
@@ -60,13 +58,13 @@ export default defineComponent({
   data() {
     return {
       seriesNav: [
-        { cate: "首页", path: "/series/home" },
-        { cate: "犯罪/悬疑", path: "/series/home" },
-        { cate: "魔幻/科幻", path: "/series/home" },
-        { cate: "都市/情感", path: "/series/home" },
-        { cate: "灵异/惊悚", path: "/series/home" },
-        { cate: "自然/历史", path: "/series/home" },
-        { cate: "动漫/卡通", path: "/series/home" },
+        { cate: "首页", cname: "home", path: "/series/home" },
+        { cate: "犯罪/悬疑", cname: "suspense", path: "/series/suspense" },
+        { cate: "魔幻/科幻", cname: "fiction", path: "/series/fiction" },
+        { cate: "都市/情感", cname: "city", path: "/series/city" },
+        { cate: "灵异/惊悚", cname: "horror", path: "/series/horror" },
+        { cate: "自然/历史", cname: "nature", path: "/series/nature" },
+        { cate: "动漫/卡通", cname: "comic", path: "/series/comic" },
       ],
       active: "首页",
     };

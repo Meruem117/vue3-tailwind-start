@@ -20,8 +20,15 @@ const router = createRouter({
       component: () => import('../components/Series.vue'),
       children: [
         { path: '', redirect: '/series/home' },
-        { path: 'home', component: () => import('../components/Series/CateHome.vue') },
-        { path: 'video', component: () => import('../components/Series/Video.vue') }
+        { path: 'home', component: () => import('../components/Series/Cate/CateHome.vue') },
+        { path: 'suspense', component: () => import('../components/Series/Cate/CateSuspense.vue') },
+        { path: 'fiction', component: () => import('../components/Series/Cate/CateFiction.vue') },
+        { path: 'city', component: () => import('../components/Series/Cate/CateCity.vue') },
+        { path: 'horror', component: () => import('../components/Series/Cate/CateHorror.vue') },
+        { path: 'nature', component: () => import('../components/Series/Cate/CateNature.vue') },
+        { path: 'comic', component: () => import('../components/Series/Cate/CateComic.vue') },
+        // { path: ':cate', component: () => import('../components/Series/Cate.vue') },
+        { path: 'video', component: () => import('../components/Series/Video.vue') },
       ],
     },
     {

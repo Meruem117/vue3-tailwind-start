@@ -5,7 +5,7 @@
     >
       <div
         class="flex flex-col flex-auto flex-nowrap h-auto w-sv justify-center"
-        v-for="(v, index) in series"
+        v-for="(v, index) in main_list"
         :key="index"
       >
         <div
@@ -23,6 +23,7 @@
           <p
             @click="toVideo(v.video_id)"
             class="flex-auto text-xl text-gray-400 tracking-widest hover:text-blue-400 cursor-pointer truncate text-right"
+            :title="v.name_cn"
           >
             {{ v.name_cn }}
           </p>
@@ -39,33 +40,34 @@
       >
         Recommend
       </div>
-      <div class="g grid grid-cols-3 gap-4 justify-items-center h-72 mx-auto">
+      <div class="g grid grid-cols-3 gap-4 justify-items-center h-72 mx-auto overflow-auto">
         <div
           class="flex flex-col flex-auto flex-nowrap justify-center w-sr"
-          v-for="(v, index) in series"
+          v-for="(r, index) in recommend_list"
           :key="index"
         >
           <div
-            @click="toVideo(v.video_id)"
+            @click="toVideo(r.video_id)"
             class="card w-sr h-sr mx-auto rounded"
           >
             <div
               class="card_cover rounded bg-gradient-to-bl from-gray-400 to-gray-900 cursor-pointer"
-              :style="{ backgroundImage: 'url(' + v.video_img + ')' }"
+              :style="{ backgroundImage: 'url(' + r.video_img + ')' }"
             ></div>
           </div>
           <div
             class="flex flex-row flex-auto flex-nowrap w-sr space-x-1 mt-1 font-serif justify-center text-center"
           >
             <p
-              @click="toVideo(v.video_id)"
+              @click="toVideo(r.video_id)"
               class="flex-auto text-base tracking-widest text-gray-400 hover:text-blue-400 cursor-pointer truncate text-right"
+              :title="r.name_cn"
             >
-              {{ v.name_cn }}
+              {{ r.name_cn }}
             </p>
             <strong
               class="flex-auto text-base font-bold text-red-500 text-left"
-              >{{ v.score }}</strong
+              >{{ r.score }}</strong
             >
           </div>
         </div>
@@ -78,77 +80,8 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "about",
-  data() {
-    return {
-      series: [
-        {
-          video_id: "1",
-          video_img:
-            "https://bit-images.bj.bcebos.com/bit-new/file/20210116/fuwk.jpg",
-          name_cn: "嘿嘿嘿asdasdasdasdads",
-          name_en: "asdasd",
-          score: "9.2",
-        },
-        {
-          video_id: "1",
-          video_img:
-            "https://bit-images.bj.bcebos.com/bit-new/file/20210116/fuwk.jpg",
-          name_cn: "嘿嘿嘿",
-          name_en: "asdasd",
-          score: "9.2",
-        },
-        {
-          video_id: "1",
-          video_img:
-            "https://bit-images.bj.bcebos.com/bit-new/file/20210116/fuwk.jpg",
-          name_cn: "嘿嘿嘿",
-          name_en: "asdasd",
-          score: "9.2",
-        },
-        {
-          video_id: "1",
-          video_img:
-            "https://bit-images.bj.bcebos.com/bit-new/file/20210116/fuwk.jpg",
-          name_cn: "嘿嘿嘿",
-          name_en: "asdasd",
-          score: "9.2",
-        },
-        {
-          video_id: "1",
-          video_img:
-            "https://bit-images.bj.bcebos.com/bit-new/file/20210116/fuwk.jpg",
-          name_cn: "嘿嘿嘿",
-          name_en: "asdasd",
-          score: "9.2",
-        },
-        {
-          video_id: "1",
-          video_img:
-            "https://bit-images.bj.bcebos.com/bit-new/file/20210116/fuwk.jpg",
-          name_cn: "嘿嘿嘿",
-          name_en: "asdasd",
-          score: "9.2",
-        },
-        {
-          video_id: "1",
-          video_img:
-            "https://bit-images.bj.bcebos.com/bit-new/file/20210116/fuwk.jpg",
-          name_cn: "嘿嘿嘿",
-          name_en: "asdasd",
-          score: "9.2",
-        },
-        {
-          video_id: "1",
-          video_img:
-            "https://bit-images.bj.bcebos.com/bit-new/file/20210116/fuwk.jpg",
-          name_cn: "嘿嘿嘿",
-          name_en: "asdasd",
-          score: "9.2",
-        },
-      ],
-    };
-  },
+  name: "seriesContent",
+  props: ["main_list", "recommend_list"],
   methods: {
     toVideo(vid: string) {
       this.$router.push({
@@ -157,7 +90,6 @@ export default defineComponent({
       });
     },
   },
-  props:['list']
 });
 </script>
 

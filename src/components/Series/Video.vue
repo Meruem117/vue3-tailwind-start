@@ -32,7 +32,6 @@ export default defineComponent({
   mounted() {
     const vid = this.$route.query;
     this.vid = vid;
-    //console.log(this.$route.params) //动态路由的传值
     console.log(this.$route.query); //get传值
   },
 });

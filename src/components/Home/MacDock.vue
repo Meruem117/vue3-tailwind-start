@@ -2,14 +2,14 @@
   <div class="glass">
     <div class="dock">
       <div
-        @click="this.$router.push({ path: icon.icon_path })"
+        @click="this.$router.push({ path: icon.path })"
         class="icon"
         tabindex="1"
         v-for="(icon, index) in icons"
         :key="index"
       >
-        <img :src="icon.icon_img" />
-        <div class="title">{{ icon.icon_name }}</div>
+        <img :src="icon.img" />
+        <div class="title">{{ icon.name }}</div>
       </div>
     </div>
   </div>
@@ -24,34 +24,34 @@ export default defineComponent({
     return {
       icons: [
         {
-          icon_name: "Home",
-          icon_img:
+          name: "Home",
+          img:
             "https://cdn3.iconfinder.com/data/icons/luchesa-vol-9/128/Home-512.png",
-          icon_path: "/home",
+          path: "/home",
         },
         {
-          icon_name: "Series",
-          icon_img:
+          name: "Series",
+          img:
             "https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/video-128.png",
-          icon_path: "/series",
+          path: "/series",
         },
         {
-          icon_name: "Car",
-          icon_img:
+          name: "Car",
+          img:
             "https://cdn3.iconfinder.com/data/icons/back-to-the-future/512/delorean-01-128.png",
-          icon_path: "/home",
+          path: "/home",
         },
         {
-          icon_name: "Game",
-          icon_img:
+          name: "Game",
+          img:
             "https://cdn3.iconfinder.com/data/icons/luchesa-vol-9/128/Toy-128.png",
-          icon_path: "/home",
+          path: "/home",
         },
         {
-          icon_name: "Animal",
-          icon_img:
+          name: "Animal",
+          img:
             "https://cdn2.iconfinder.com/data/icons/free-version/128/recycling-128.png",
-          icon_path: "/home",
+          path: "/home",
         },
       ],
     };
