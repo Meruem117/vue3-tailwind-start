@@ -28,19 +28,23 @@
     src: url('../../static/font/regular.ttf')
 }
 
+/* nav position */
 .nav {
     @apply flex flex-row flex-nowrap flex-auto w-screen h-16 bg-pan-dark align-middle fixed top-0;
 }
 
+/* content position */
 .content {
     @apply flex flex-auto flex-nowrap justify-center mt-20 mx-48 space-x-10 h-content w-auto;
 }
 
+/* card container */
 .card {
     z-index: 1;
     perspective: 1000px;
 }
 
+/* card cover */
 .card_cover {
     z-index: 1;
     position: absolute;
@@ -77,14 +81,11 @@
     transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
 }
 
-/* .card:hover .card_cover {
-    transform: rotateX(7deg) translateY(-6px);
-} */
-
 .card:hover .card_cover::after {
     transform: translateY(0%);
 }
 
+/* card box shadow */
 .card::before {
     display: block;
     content: "";
@@ -105,3 +106,55 @@
     opacity: 0.6;
     transform: rotateX(7deg) translateY(-6px) scale(1.05);
 }
+
+/* card hover main effect */
+/* .card:hover .card_cover {
+    transform: rotateX(7deg) translateY(-6px);
+} */
+
+/* scrollbar */
+/* 整个滚动条 */
+::-webkit-scrollbar {
+    @apply w-2;
+    @apply h-full;
+    @apply bg-transparent;
+}
+
+/* 滚动条上的滚动滑块 */
+::-webkit-scrollbar-thumb {
+    @apply bg-pan-dark;
+    @apply rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-blue-500;
+}
+
+::-webkit-scrollbar-thumb:active {
+    @apply bg-gray-900;
+}
+
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+    @apply bg-transparent;
+    @apply rounded-full;
+}
+
+::-webkit-scrollbar-track:hover {
+    @apply bg-gray-500;
+}
+
+::-webkit-scrollbar-track:active {
+    @apply bg-gray-600;
+}
+
+/* 滚动条上的按钮(上下箭头)
+滚动条没有滑块的轨道部分
+当同时有垂直滚动条和水平滚动条时交汇的部分
+某些元素的corner部分的部分样式 */
+/* ::-webkit-scrollbar-button,
+::-webkit-scrollbar-track-piece,
+::-webkit-scrollbar-corner,
+::-webkit-resizer {
+    @apply bg-transparent;
+} */

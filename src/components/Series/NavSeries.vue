@@ -59,7 +59,7 @@ export default defineComponent({
     return {
       seriesNav: [
         { cate: "首页", cname: "home", path: "/series/home" },
-        { cate: "犯罪/悬疑", cname: "suspense", path: "/series/suspense" },
+        { cate: "剧情/悬疑", cname: "plot", path: "/series/plot" },
         { cate: "魔幻/科幻", cname: "fiction", path: "/series/fiction" },
         { cate: "都市/情感", cname: "city", path: "/series/city" },
         { cate: "灵异/惊悚", cname: "horror", path: "/series/horror" },

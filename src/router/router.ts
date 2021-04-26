@@ -21,7 +21,7 @@ const router = createRouter({
       children: [
         { path: '', redirect: '/series/home' },
         { path: 'home', component: () => import('../components/Series/Cate/CateHome.vue') },
-        { path: 'suspense', component: () => import('../components/Series/Cate/CateSuspense.vue') },
+        { path: 'plot', component: () => import('../components/Series/Cate/CatePlot.vue') },
         { path: 'fiction', component: () => import('../components/Series/Cate/CateFiction.vue') },
         { path: 'city', component: () => import('../components/Series/Cate/CateCity.vue') },
         { path: 'horror', component: () => import('../components/Series/Cate/CateHorror.vue') },
