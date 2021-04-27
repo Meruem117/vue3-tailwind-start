@@ -1,8 +1,8 @@
 <template>
-  <div class="content flex-row">
+  <div class="content loading">
     <!-- 主体grid -->
     <div
-      class="g grid grid-cols-5 gap-4 float-right overflow-auto justify-items-center h-full w-3/4 pt-4"
+      class="grid grid-cols-5 gap-4 float-right overflow-auto justify-items-center h-full w-3/4 pt-4 px-4"
     >
       <!-- 容器 -->
       <div
@@ -11,17 +11,19 @@
         :key="index"
       >
         <!-- 图片 -->
-        <div class="card w-sv h-sv mx-auto rounded bg-gray-800">
+        <div class="card w-sv h-sv mb-5 mx-auto rounded bg-gray-800">
           <div class="card_cover rounded bg-gray-800"></div>
         </div>
         <!-- 文字 -->
         <div
-          class="w-sv mt-3 rounded justify-center text-center h-6 bg-gray-800 shadow-2xl"
+          class="w-sv mb-1 rounded justify-center text-center h-8 bg-gray-800 shadow-2xl"
         ></div>
       </div>
     </div>
     <!-- 分割线 -->
-    <div class="h-full w-0.5 border-r-2 border-dashed border-gray-600"></div>
+    <div
+      class="h-full w-0 border-r-2 border-dashed border-gray-600 -ml-4"
+    ></div>
     <!-- 推荐区 -->
     <div class="flex flex-col flex-auto flex-nowrap space-y-4 h-auto w-1/4">
       <!-- 标题 -->
@@ -58,7 +60,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "test",
+  name: "seriesLoading",
   data() {
     return {
       m: [
@@ -94,8 +96,8 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-::-webkit-scrollbar {
+<style>
+.loading ::-webkit-scrollbar {
   display: none;
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
-  <div class="content flex-row">
+  <div class="content">
     <!-- 主体grid -->
     <div
-      class="g grid grid-cols-5 gap-4 float-right overflow-auto justify-items-center h-full w-3/4 pt-4"
+      class="grid grid-cols-5 gap-4 float-right overflow-auto justify-items-center h-full w-3/4 pt-4 px-4"
     >
-      <!-- 1个video -->
+      <!-- 容器 -->
       <div
         class="flex flex-col flex-auto flex-nowrap h-auto w-sv justify-center"
         v-for="(v, index) in main_list"
@@ -38,7 +38,9 @@
       </div>
     </div>
     <!-- 分割线 -->
-    <div class="h-full w-0.5 border-r-2 border-dashed border-gray-400"></div>
+    <div
+      class="h-full w-0 border-r-2 border-dashed border-gray-400 -ml-4"
+    ></div>
     <!-- 推荐区 -->
     <div class="flex flex-col flex-auto flex-nowrap space-y-4 h-auto w-1/4">
       <!-- 标题 -->
@@ -49,9 +51,9 @@
       </div>
       <!-- 推荐grid -->
       <div
-        class="grid grid-cols-3 gap-4 justify-items-center h-72 mx-auto overflow-auto"
+        class="grid grid-cols-3 gap-4 justify-items-center h-3/4 mx-auto overflow-auto"
       >
-        <!-- 1个推荐 -->
+        <!-- 容器 -->
         <div
           class="flex flex-col flex-auto flex-nowrap justify-center w-sr"
           v-for="(r, index) in recommend_list"
@@ -97,9 +99,11 @@ export default defineComponent({
   props: ["main_list", "recommend_list"],
   methods: {
     toVideo(vid: string) {
+      // let sv = "SV" + vid.substr(0, 16);
       this.$router.push({
-        path: "/series/video",
-        query: { vid: vid },
+        name: "series/video",
+        params: { vid: vid },
+        // query: { vid: vid },
       });
     },
   },

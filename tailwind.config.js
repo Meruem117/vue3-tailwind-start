@@ -19,7 +19,7 @@ module.exports = {
         'sv': '180px',
       },
       height: {
-        'content': '750px',
+        'content': '80%',
         'sr': '156px',
         'sv': '252px',
       },

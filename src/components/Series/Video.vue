@@ -1,6 +1,6 @@
 <template>
-  <div class="flex justify-center align-middle items-center top-0.5">
-    <h1 class="text-white text-2xl absolute top-0.5">{{ vid }}</h1>
+  <div class="content">
+    <h1 class="text-white text-2xl">{{ vid }}</h1>
   </div>
 </template>
 
@@ -30,9 +30,8 @@ export default defineComponent({
     },
   },
   mounted() {
-    const vid = this.$route.query;
+    const vid = this.$route.params.vid;
     this.vid = vid;
-    console.log(this.$route.query); //get传值
   },
 });
 </script>

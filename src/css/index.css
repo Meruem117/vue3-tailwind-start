@@ -35,7 +35,7 @@
 
 /* content position */
 .content {
-    @apply flex flex-auto flex-nowrap justify-center mt-20 mx-48 space-x-10 h-content w-auto;
+    @apply flex flex-auto flex-nowrap justify-center space-x-10 h-content w-3/4 fixed top-20;
 }
 
 /* card container */
@@ -158,3 +158,13 @@
 ::-webkit-resizer {
     @apply bg-transparent;
 } */
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
