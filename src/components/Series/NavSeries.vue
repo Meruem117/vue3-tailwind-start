@@ -20,7 +20,7 @@
       class="flex flex-row-reverse align-middle items-center h-full w-auto py-2 ml-6"
     >
       <button
-        class="outline-none focus:outline-none h-4/5 w-12 border-2 border-gray-400 rounded-3xl rounded-l-none hover:bg-blue-600"
+        class="outline-none focus:outline-none h-4/5 w-12 border-2 border-gray-400 rounded-3xl rounded-l-none hover:bg-blue-700"
       >
         <svg
           class="w-6 h-4/5 text-gray-400 cursor-pointer mx-auto"

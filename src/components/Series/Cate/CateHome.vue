@@ -1,8 +1,12 @@
 <template>
   <transition name="fade">
     <seriesLoading v-if="isLoading"></seriesLoading>
+    <seriesContent
+      :main_list="data"
+      :recommend_list="recommend"
+      v-else
+    ></seriesContent>
   </transition>
-  <seriesContent :main_list="data" :recommend_list="recommend"></seriesContent>
 </template>
 
 <script>
