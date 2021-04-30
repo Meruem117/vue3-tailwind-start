@@ -16,7 +16,7 @@ import seriesContent from "../SeriesContent.vue";
 import seriesLoading from "../SeriesLoading.vue";
 
 export default defineComponent({
-  name: "cateCity",
+  name: "cateCrime",
   components: { seriesContent, seriesLoading },
   data() {
     return {
@@ -32,7 +32,7 @@ export default defineComponent({
   methods: {
     getData() {
       this.axios
-        .get("/api/getCity")
+        .get("/api/getCrime")
         .then((response) => {
           this.data = response.data;
           this.isLoading = false;

@@ -22,6 +22,7 @@ const router = createRouter({
         { path: '', redirect: '/series/home' },
         { path: 'home', name: 'series/home', component: () => import('../components/Series/Cate/CateHome.vue') },
         { path: 'plot', name: 'series/plot', component: () => import('../components/Series/Cate/CatePlot.vue') },
+        { path: 'crime', name: 'series/crime', component: () => import('../components/Series/Cate/CateCrime.vue') },
         { path: 'fiction', name: 'series/fiction', component: () => import('../components/Series/Cate/CateFiction.vue') },
         { path: 'city', name: 'series/city', component: () => import('../components/Series/Cate/CateCity.vue') },
         { path: 'horror', name: 'series/horror', component: () => import('../components/Series/Cate/CateHorror.vue') },

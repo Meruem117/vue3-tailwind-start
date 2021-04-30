@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content" v-if="!isNull">
     <!-- 主体grid -->
     <div
       id="g"
@@ -10,7 +10,7 @@
         class="flex flex-col flex-auto flex-nowrap h-auto w-sv justify-center"
         v-for="(v, index) in main_list"
         :key="index"
-        v-show="isShow || index < number"
+        v-show="isShow || index < size"
       >
         <!-- 图片 -->
         <div
@@ -40,33 +40,34 @@
       </div>
       <!-- 按钮 -->
       <div
-        class="col-start-1 col-end-6 flex flex-row justify-start font-mono text-base tracking-widest text-gray-400 w-full h-9"
+        class="col-start-1 col-end-6 space-x-6 flex flex-row justify-start font-mono text-base tracking-widest text-gray-400 w-full h-9"
+        v-show="isShowBtn"
       >
         <button
           v-show="!isEnd"
           @click="showAll()"
-          class="w-auto h-full align-middle px-2 ml-4 rounded border-dashed border-2 border-gray-400 hover:text-blue-500 hover:border-blue-500 focus:outline-none"
+          class="w-auto h-full align-middle px-2 rounded border-dashed border-2 border-gray-400 hover:text-blue-500 hover:border-blue-500 focus:outline-none"
         >
           展开全部
         </button>
         <button
           v-show="!isShow && !isEnd"
           @click="showMore()"
-          class="w-auto h-full align-middle px-2 ml-4 rounded border-dashed border-2 border-gray-400 hover:text-blue-400 hover:border-blue-500 focus:outline-none"
+          class="w-auto h-full align-middle px-2 rounded border-dashed border-2 border-gray-400 hover:text-blue-400 hover:border-blue-500 focus:outline-none"
         >
           加载更多
         </button>
         <button
           v-show="isEnd"
           @click="showBack()"
-          class="w-auto h-full align-middle px-2 ml-4 rounded border-dashed border-2 border-gray-400 hover:text-blue-400 hover:border-blue-500 focus:outline-none"
+          class="w-auto h-full align-middle px-2 rounded border-dashed border-2 border-gray-400 hover:text-blue-400 hover:border-blue-500 focus:outline-none"
         >
           收起所有
         </button>
         <button
           v-show="isEnd"
           @click="showStart()"
-          class="w-auto h-full align-middle px-2 ml-4 rounded border-dashed border-2 border-gray-400 hover:text-blue-400 hover:border-blue-500 focus:outline-none"
+          class="w-auto h-full align-middle px-2 rounded border-dashed border-2 border-gray-400 hover:text-blue-400 hover:border-blue-500 focus:outline-none"
         >
           回到开头
         </button>
@@ -124,6 +125,9 @@
       </div>
     </div>
   </div>
+  <div class="content text-gray-400 text-2xl" v-else>
+    Sorry, there is no data
+  </div>
 </template>
 
 <script lang="ts">
@@ -131,13 +135,21 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "seriesContent",
-  props: ["main_list", "recommend_list"],
+  props: ["main_list", "recommend_list", "isNull"],
+  // emits: ["getMore"],
   data() {
     return {
       isShow: false,
       isEnd: false,
-      number: 20,
+      // number: 1,
+      size: 20,
+      isShowBtn: true,
     };
+  },
+  mounted() {
+    if (this.main_list.length < this.size) {
+      this.isShowBtn = false;
+    }
   },
   methods: {
     toVideo(vid: string) {
@@ -153,14 +165,17 @@ export default defineComponent({
       this.isShow = true;
     },
     showMore() {
-      this.number += 20;
+      this.size += 20;
       let total_number = this.main_list.length;
-      if (this.number >= total_number) {
+      if (this.size >= total_number) {
         this.isEnd = true;
       }
+      // this.number += 1;
+      // 获取父组件函数
+      // this.$emit("getMore");
     },
     showBack() {
-      this.number = 20;
+      this.size = 20;
       this.isEnd = false;
       this.isShow = false;
     },

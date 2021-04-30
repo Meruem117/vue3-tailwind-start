@@ -4,8 +4,17 @@
     <seriesContent
       :main_list="data"
       :recommend_list="recommend"
+      :isNull="isNull"
       v-else
     ></seriesContent>
+    <!-- ref获取子组件数据 @getMore调用父组件函数 -->
+    <!-- <seriesContent
+      ref="content"
+      :main_list="data"
+      :recommend_list="recommend"
+      @getMore="getMore"
+      v-else
+    ></seriesContent> -->
   </transition>
 </template>
 
@@ -22,6 +31,7 @@ export default defineComponent({
       data: [],
       recommend: [],
       isLoading: true,
+      isNull: false,
     };
   },
   mounted() {
@@ -34,11 +44,20 @@ export default defineComponent({
         .then((response) => {
           this.data = response.data;
           this.isLoading = false;
+          if (this.data.length == 0) {
+            this.isNull = true;
+          }
         })
         .catch((error) => {
           console.log(error);
         });
     },
+    // 父组件函数
+    // getMore() {
+    // 获取子组件数据
+    //   let number = this.$refs.content.number;
+    //   console.log(number);
+    // },
   },
 });
 </script>

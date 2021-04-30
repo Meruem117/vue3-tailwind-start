@@ -7,7 +7,7 @@
         v-for="(nav, index) in seriesNav"
         :key="index"
         :to="nav.path"
-        class="block h-full p-4 text-xl font-medium hover:text-red-500 hover:border-red-500 transition-all ease-in-out font-serif"
+        class="block h-full p-4 text-xl font-medium hover:text-red-400 hover:border-red-400 transition-all ease-in-out font-serif"
         :class="{
           'border-b-4 border-blue-500 text-2xl text-blue-400':
             active == nav.cate,
@@ -59,10 +59,12 @@ export default defineComponent({
     return {
       seriesNav: [
         { cate: "首页", cname: "home", path: "/series/home" },
-        { cate: "剧情/悬疑", cname: "plot", path: "/series/plot" },
+        { cate: "剧情/动作", cname: "plot", path: "/series/plot" },
+        { cate: "犯罪/悬疑", cname: "crime", path: "/series/crime" },
         { cate: "魔幻/科幻", cname: "fiction", path: "/series/fiction" },
-        { cate: "都市/情感", cname: "city", path: "/series/city" },
-        { cate: "灵异/惊悚", cname: "horror", path: "/series/horror" },
+        { cate: "家庭/情感", cname: "city", path: "/series/city" },
+        { cate: "恐怖/惊悚", cname: "horror", path: "/series/horror" },
+        // 生活/喜剧
         { cate: "自然/历史", cname: "nature", path: "/series/nature" },
         { cate: "动漫/卡通", cname: "comic", path: "/series/comic" },
       ],
