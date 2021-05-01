@@ -1,5 +1,4 @@
-<template>
-  <div class="content loading">
+<div class="content loading">
     <!-- 主体grid -->
     <div
       class="grid grid-cols-5 gap-4 float-right overflow-auto justify-items-center h-full w-3/4 pt-4 px-4"
@@ -54,50 +53,3 @@
       </div>
     </div>
   </div>
-</template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  name: "seriesLoading",
-  data() {
-    return {
-      m: [
-        { vid: "1" },
-        { vid: "2" },
-        { vid: "3" },
-        { vid: "4" },
-        { vid: "5" },
-        { vid: "6" },
-        { vid: "7" },
-        { vid: "8" },
-        { vid: "9" },
-        { vid: "10" },
-        { vid: "11" },
-        { vid: "12" },
-        { vid: "13" },
-        { vid: "14" },
-        { vid: "15" },
-      ],
-      r: [
-        { vid: "1" },
-        { vid: "2" },
-        { vid: "3" },
-        { vid: "4" },
-        { vid: "5" },
-        { vid: "6" },
-        { vid: "7" },
-        { vid: "8" },
-        { vid: "9" },
-      ],
-    };
-  },
-});
-</script>
-
-<style>
-.loading ::-webkit-scrollbar {
-  display: none;
-}
-</style>

@@ -32,7 +32,7 @@ router.get('/getHomeRec', (req, res) => {
         }
     })
 })
-// 剧情/动作
+// 剧情/历史
 router.get('/getPlot', (req, res) => {
     let sql = $sql.series.getPlot
     conn.query(sql, function (err, result) {
@@ -55,9 +55,9 @@ router.get('/getPlotRec', (req, res) => {
         }
     })
 })
-// 犯罪/悬疑
-router.get('/getCrime', (req, res) => {
-    let sql = $sql.series.getCrime
+// 动作/悬疑
+router.get('/getAction', (req, res) => {
+    let sql = $sql.series.getAction
     conn.query(sql, function (err, result) {
         if (err) {
             console.log(err)
@@ -67,8 +67,8 @@ router.get('/getCrime', (req, res) => {
         }
     })
 })
-router.get('/getCrimeRec', (req, res) => {
-    let sql = $sql.series.recommend.getCrime
+router.get('/getActionRec', (req, res) => {
+    let sql = $sql.series.recommend.getAction
     conn.query(sql, function (err, result) {
         if (err) {
             console.log(err)
@@ -101,9 +101,9 @@ router.get('/getFictionRec', (req, res) => {
         }
     })
 })
-// 家庭/情感
-router.get('/getCity', (req, res) => {
-    let sql = $sql.series.getCity
+// 生活/喜剧
+router.get('/getLife', (req, res) => {
+    let sql = $sql.series.getLife
     conn.query(sql, function (err, result) {
         if (err) {
             console.log(err)
@@ -113,8 +113,8 @@ router.get('/getCity', (req, res) => {
         }
     })
 })
-router.get('/getCityRec', (req, res) => {
-    let sql = $sql.series.recommend.getCity
+router.get('/getLifeRec', (req, res) => {
+    let sql = $sql.series.recommend.getLife
     conn.query(sql, function (err, result) {
         if (err) {
             console.log(err)
@@ -147,29 +147,6 @@ router.get('/getHorrorRec', (req, res) => {
         }
     })
 })
-// 自然/历史
-router.get('/getNature', (req, res) => {
-    let sql = $sql.series.getNature
-    conn.query(sql, function (err, result) {
-        if (err) {
-            console.log(err)
-        }
-        if (result) {
-            res.send(result);
-        }
-    })
-})
-router.get('/getNatureRec', (req, res) => {
-    let sql = $sql.series.recommend.getNature
-    conn.query(sql, function (err, result) {
-        if (err) {
-            console.log(err)
-        }
-        if (result) {
-            res.send(result);
-        }
-    })
-})
 // 动漫/卡通
 router.get('/getComic', (req, res) => {
     let sql = $sql.series.getComic
@@ -193,5 +170,17 @@ router.get('/getComicRec', (req, res) => {
         }
     })
 })
-
+// video
+router.get('/getVideo', (req, res) => {
+    let vid = req.query.vid
+    let sql = `select * from videos where video_id = '${vid}'`
+    conn.query(sql, function (err, result) {
+        if (err) {
+            console.log(err)
+        }
+        if (result) {
+            res.send(result);
+        }
+    })
+})
 module.exports = router

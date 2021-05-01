@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <seriesLoading v-if="isLoading"></seriesLoading>
+    <loadSeries v-if="isLoading"></loadSeries>
     <seriesContent
       :main_list="data"
       :recommend_list="recommend"
@@ -21,11 +21,11 @@
 <script>
 import { defineComponent } from "vue";
 import seriesContent from "../SeriesContent.vue";
-import seriesLoading from "../SeriesLoading.vue";
+import loadSeries from "../LoadSeries.vue";
 
 export default defineComponent({
   name: "cateHome",
-  components: { seriesContent, seriesLoading },
+  components: { seriesContent, loadSeries },
   data() {
     return {
       data: [],
@@ -47,6 +47,14 @@ export default defineComponent({
           if (this.data.length == 0) {
             this.isNull = true;
           }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      this.axios
+        .get("/api/getHomeRec")
+        .then((response) => {
+          this.recommend = response.data;
         })
         .catch((error) => {
           console.log(error);

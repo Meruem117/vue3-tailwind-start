@@ -3,7 +3,7 @@
     <!-- 主体grid -->
     <div
       id="g"
-      class="grid grid-cols-5 gap-4 float-right overflow-auto justify-items-center h-full w-3/4 pt-4 px-4"
+      class="grid grid-cols-5 gap-4 float-right overflow-auto justify-items-center h-full w-3/4 pt-4 px-6"
     >
       <!-- 容器 -->
       <div
@@ -87,7 +87,7 @@
       </div>
       <!-- 推荐grid -->
       <div
-        class="grid grid-cols-3 gap-4 justify-items-center h-3/4 mx-auto overflow-auto"
+        class="grid grid-cols-3 gap-x-4 gap-y-1 justify-items-center h-4/5 mx-auto overflow-auto"
       >
         <!-- 容器 -->
         <div
@@ -107,7 +107,7 @@
           </div>
           <!-- 文字 -->
           <div
-            class="flex flex-row flex-auto flex-nowrap w-sr space-x-1 mt-1 font-serif justify-center text-center"
+            class="flex flex-row flex-auto flex-nowrap w-sr space-x-1 mt-2 font-serif justify-center text-center"
           >
             <p
               @click="toVideo(r.video_id)"

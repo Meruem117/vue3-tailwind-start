@@ -59,13 +59,11 @@ export default defineComponent({
     return {
       seriesNav: [
         { cate: "首页", cname: "home", path: "/series/home" },
-        { cate: "剧情/动作", cname: "plot", path: "/series/plot" },
-        { cate: "犯罪/悬疑", cname: "crime", path: "/series/crime" },
+        { cate: "剧情/历史", cname: "plot", path: "/series/plot" },
+        { cate: "动作/悬疑", cname: "action", path: "/series/action" },
         { cate: "魔幻/科幻", cname: "fiction", path: "/series/fiction" },
-        { cate: "家庭/情感", cname: "city", path: "/series/city" },
+        { cate: "生活/喜剧", cname: "life", path: "/series/life" },
         { cate: "恐怖/惊悚", cname: "horror", path: "/series/horror" },
-        // 生活/喜剧
-        { cate: "自然/历史", cname: "nature", path: "/series/nature" },
         { cate: "动漫/卡通", cname: "comic", path: "/series/comic" },
       ],
       active: "首页",
