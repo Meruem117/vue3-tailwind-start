@@ -173,7 +173,7 @@ router.get('/getComicRec', (req, res) => {
 // video
 router.get('/getVideo', (req, res) => {
     let vid = req.query.vid
-    let sql = `select * from videos where video_id = '${vid}'`
+    let sql = `select * from videos v join series s on s.series_name = v.series where v.video_id = '${vid}';`
     conn.query(sql, function (err, result) {
         if (err) {
             console.log(err)
@@ -183,4 +183,5 @@ router.get('/getVideo', (req, res) => {
         }
     })
 })
+
 module.exports = router
