@@ -173,7 +173,7 @@ router.get('/getComicRec', (req, res) => {
 // video
 router.get('/getVideo', (req, res) => {
     let vid = req.query.vid
-    let sql = `select * from videos v join series s on s.series_name = v.series where v.video_id = '${vid}';`
+    let sql = `select v.video_id,v.name_cn,v.name_en,v.video_img,v.type,v.score,v.date,v.current_season,v.total_episode,v.length,v.heat,v.douban_url,v.imdb_url,v.summary,v.is_end,s.series_name,s.region,s.media,s.total_season from videos v join series s on s.series_id = v.series where v.video_id = '${vid}';`
     conn.query(sql, function (err, result) {
         if (err) {
             console.log(err)

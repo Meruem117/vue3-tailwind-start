@@ -3,11 +3,11 @@
     <!-- 主体grid -->
     <div
       id="g"
-      class="grid grid-cols-5 gap-4 float-right overflow-auto justify-items-center h-full w-3/4 pt-4 px-6"
+      class="grid grid-cols-5 gap-x-4 float-right overflow-auto justify-items-center h-full w-3/4 pt-4 px-6"
     >
       <!-- 容器 -->
       <div
-        class="flex flex-col flex-auto flex-nowrap h-auto w-sv justify-center"
+        class="flex flex-col flex-auto flex-nowrap h-auto w-sv justify-center mb-4"
         v-for="(v, index) in main_list"
         :key="index"
         v-show="isShow || index < size"
@@ -40,7 +40,7 @@
       </div>
       <!-- 按钮 -->
       <div
-        class="col-start-1 col-end-6 space-x-6 flex flex-row justify-start font-mono text-base tracking-widest text-gray-400 w-full h-9"
+        class="mt-2 col-start-1 col-end-6 space-x-6 flex flex-row justify-start font-mono text-base tracking-widest text-gray-400 w-full h-9"
         v-show="isShowBtn"
       >
         <button
@@ -87,11 +87,11 @@
       </div>
       <!-- 推荐grid -->
       <div
-        class="grid grid-cols-3 gap-x-4 gap-y-1 justify-items-center h-4/5 mx-auto overflow-auto"
+        class="grid grid-cols-3 gap-1 justify-items-center h-4/5 mx-auto overflow-auto"
       >
         <!-- 容器 -->
         <div
-          class="flex flex-col flex-auto flex-nowrap justify-center w-sr"
+          class="flex flex-col flex-auto flex-nowrap justify-center w-sr mr-2"
           v-for="(r, index) in recommend_list"
           :key="index"
         >
@@ -154,11 +154,12 @@ export default defineComponent({
   methods: {
     toVideo(vid: string) {
       // let sv = "SV" + vid.substr(0, 16);
-      this.$router.push({
+      let v_url = this.$router.resolve({
         name: "series/video",
         params: { vid: vid },
         // query: { vid: vid },
       });
+      window.open(v_url.href, "_blank");
     },
     showAll() {
       this.isEnd = true;
