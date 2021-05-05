@@ -2,7 +2,6 @@
   <div class="content" v-if="!isNull">
     <!-- 主体grid -->
     <div
-      id="g"
       class="grid grid-cols-5 gap-x-4 float-right overflow-auto justify-items-center h-full w-3/4 pt-4 px-6"
     >
       <!-- 容器 -->

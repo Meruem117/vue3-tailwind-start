@@ -1,101 +1,34 @@
 <template>
-  <div class="content flex-row">
-    <!-- 主体grid -->
-    <div
-      class="g grid grid-cols-5 gap-4 float-right overflow-auto justify-items-center h-full w-3/4 pt-4"
-    >
-      <!-- 容器 -->
+  <div class="content">
+    <div id="card" class="card w-sv h-sv mx-auto rounded absolute top-1/3">
       <div
-        class="flex flex-col flex-auto flex-nowrap h-auto w-sv justify-center"
-        v-for="(v, index) in m"
-        :key="index"
-      >
-        <!-- 图片 -->
-        <div class="card w-sv h-sv mx-auto rounded bg-gray-800">
-          <div class="card_cover rounded bg-gray-800"></div>
-        </div>
-        <!-- 文字 -->
-        <div
-          class="w-sv mt-3 rounded justify-center text-center h-6 bg-gray-800 shadow-2xl"
-        ></div>
-      </div>
-    </div>
-    <!-- 分割线 -->
-    <div class="h-full w-0.5 border-r-2 border-dashed border-gray-600"></div>
-    <!-- 推荐区 -->
-    <div class="flex flex-col flex-auto flex-nowrap space-y-4 h-auto w-1/4">
-      <!-- 标题 -->
-      <div
-        class="h-10 justify-center font-twi text-2xl font-semibold tracking-widest text-gray-500 text-left pl-3 border-b-2 border-dashed border-gray-600"
-      >
-        Recommend
-      </div>
-      <!-- 推荐grid -->
-      <div
-        class="grid grid-cols-3 gap-4 justify-items-center h-3/4 mx-auto overflow-auto"
-      >
-        <!-- 容器 -->
-        <div
-          class="flex flex-col flex-auto flex-nowrap justify-center w-sr"
-          v-for="(r, index) in r"
-          :key="index"
-        >
-          <!-- 图片 -->
-          <div class="card w-sr h-sr mx-auto rounded bg-gray-800">
-            <div class="card_cover rounded bg-gray-800"></div>
-          </div>
-          <!-- 文字 -->
-          <div
-            class="w-sr space-x-1 mt-2 h-5 justify-center text-center bg-gray-800 shadow-2xl"
-          ></div>
-        </div>
-      </div>
+        class="card_cover rounded bg-gradient-to-bl from-gray-400 to-gray-900 cursor-pointer"
+        style="
+          background-image: url(https://andrewhawkes.github.io/codepen-assets/steam-game-cards/game_1.jpg);
+        "
+      ></div>
     </div>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "test",
-  data() {
-    return {
-      m: [
-        { vid: "1" },
-        { vid: "2" },
-        { vid: "3" },
-        { vid: "4" },
-        { vid: "5" },
-        { vid: "6" },
-        { vid: "7" },
-        { vid: "8" },
-        { vid: "9" },
-        { vid: "10" },
-        { vid: "11" },
-        { vid: "12" },
-        { vid: "13" },
-        { vid: "14" },
-        { vid: "15" },
-      ],
-      r: [
-        { vid: "1" },
-        { vid: "2" },
-        { vid: "3" },
-        { vid: "4" },
-        { vid: "5" },
-        { vid: "6" },
-        { vid: "7" },
-        { vid: "8" },
-        { vid: "9" },
-      ],
-    };
-  },
 });
+window.onload = function () {
+  let card = document.getElementById("card");
+  card.addEventListener("mousemove", (e) => {
+    let x = (window.innerWidth / 2 - e.pageX) / 10;
+    let y = (window.innerHeight / 2 - e.pageY) / 10;
+    card.style.transform = `rotateX(${-y}deg) rotateY(${-x}deg) scale(1.2)`;
+  });
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = ``;
+  });
+};
 </script>
 
 <style scoped>
-::-webkit-scrollbar {
-  display: none;
-}
 </style>

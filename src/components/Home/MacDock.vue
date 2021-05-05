@@ -1,15 +1,21 @@
 <template>
-  <div class="glass">
-    <div class="dock">
+  <div
+    class="flex fixed -bottom-0.5 justify-center w-auto h-20 bg-pan-dark border rounded-lg border-gray-500 shadow-xl"
+  >
+    <div class="flex m-0 p-2 justify-center items-center">
       <div
         @click="this.$router.push({ path: icon.path })"
-        class="icon"
+        class="icon inline-block relative select-none outline-none box-border text-center m-1.5 w-16 h-16 transition-all duration-500"
         tabindex="1"
         v-for="(icon, index) in icons"
         :key="index"
       >
-        <img :src="icon.img" />
-        <div class="title">{{ icon.name }}</div>
+        <img :src="icon.img" class="w-full h-full" />
+        <div
+          class="title absolute left-1/2 -top-16 bg-pan-dark p-2 rounded opacity-0 text-gray-400 transition-all duration-200 transform -translate-x-1/2"
+        >
+          {{ icon.name }}
+        </div>
       </div>
     </div>
   </div>
@@ -60,61 +66,8 @@ export default defineComponent({
 </script>
 
 <style>
-.glass {
-  height: 6rem;
-  width: auto;
-  position: fixed;
-  bottom: -1%;
-  background: #2d333b;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.dock {
-  margin: 0;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.icon {
-  margin: 10px;
-  display: inline-block;
-  box-sizing: border-box;
-  width: 70px;
-  height: 70px;
-  text-align: center;
-  display: flex;
-  position: relative;
-  user-select: none;
-  transition: all 0.5s;
-  transform-style: flat;
-  outline: none;
-  cursor: default;
-}
-
-.icon img {
-  width: 70px;
-  height: 70px;
-}
-
 .icon .title {
   z-index: 2;
-  position: absolute;
-  top: -110%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #2d333b;
-  padding: 10px 15px;
-  border-radius: 4px;
-  color: #cdd9e5;
-  opacity: 0;
-  transition: all 0.25s;
 }
 
 .icon .title:after {
@@ -139,19 +92,15 @@ export default defineComponent({
   0% {
     transform: translateY(0px) translateX(0.1px);
   }
-
   25% {
     transform: translateY(-40px) translateX(0.1px);
   }
-
   50% {
     transform: translateY(0px) translateX(0.1px);
   }
-
   75% {
     transform: translateY(-20px) translateX(0.1px);
   }
-
   100% {
     transform: translateY(0px) translateX(0.1px);
   }
