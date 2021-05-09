@@ -4,11 +4,6 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Munsteria';
-    src: url('../../static/font/Munsteria.ttf');
-}
-
-@font-face {
     font-family: 'Twilight';
     src: url('../../static/font/Twilight.ttf')
 }
@@ -19,13 +14,8 @@
 }
 
 @font-face {
-    font-family: 'zy';
-    src: url('../../static/font/zy.ttf')
-}
-
-@font-face {
-    font-family: 'regular';
-    src: url('../../static/font/regular.ttf')
+    font-family: 'ali_ph';
+    src: url('../../static/font/Alibaba-PuHuiTi-Regular.ttf')
 }
 
 /* nav position */
@@ -35,7 +25,7 @@
 
 /* content position */
 .content {
-    @apply flex flex-auto flex-nowrap justify-center space-x-4 h-content w-4/5 fixed top-20;
+    @apply flex flex-auto flex-nowrap h-content w-4/5 fixed top-20;
 }
 
 /* card container */

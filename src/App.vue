@@ -1,15 +1,20 @@
 <template>
-  <router-view></router-view>
+  <router-view :key="key"></router-view>
   <dock></dock>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import dock from "./components/Home/MacDock.vue";
 export default defineComponent({
   name: "app",
   components: {
     dock,
+  },
+  computed: {
+    key() {
+      return this.$route.fullPath;
+    },
   },
 });
 </script>

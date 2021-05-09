@@ -20,7 +20,8 @@
       class="flex flex-row-reverse align-middle items-center h-full w-auto py-2 ml-6"
     >
       <button
-        class="outline-none focus:outline-none h-4/5 w-12 border-2 border-gray-400 rounded-3xl rounded-l-none hover:bg-blue-700"
+        class="outline-none focus:outline-none h-4/5 w-12 border-2 border-gray-400 rounded-3xl rounded-l-none hover:bg-blue-700 active:bg-blue-800"
+        @click="search()"
       >
         <svg
           class="w-6 h-4/5 text-gray-400 cursor-pointer mx-auto"
@@ -35,9 +36,10 @@
         </svg>
       </button>
       <input
-        class="w-auto h-4/5 px-3 border-dashed border-2 border-r-0 border-gray-400 bg-transparent rounded-xl rounded-r-none text-xl font-twi text-gray-400 placeholder-opacity-70 transition-all ease-in-out outline-none focus:border-blue-500 focus:outline-none focus:shadow-outline"
-        type="search"
+        class="w-auto h-4/5 px-3 border-dashed border-2 border-r-0 border-gray-400 bg-transparent rounded-xl rounded-r-none text-lg font-twi text-gray-400 placeholder-opacity-60 transition-all ease-in-out outline-none focus:border-blue-500 focus:outline-none focus:shadow-outline"
+        type="text"
         placeholder="Search..."
+        ref="getSearchContent"
       />
     </div>
     <div
@@ -72,6 +74,13 @@ export default defineComponent({
   methods: {
     selected(cate) {
       this.active = cate;
+    },
+    search() {
+      let sc = this.$refs.getSearchContent.value;
+      this.$router.push({
+        path: "/series/search",
+        query: { sc: sc },
+      });
     },
   },
 });

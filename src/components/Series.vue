@@ -1,6 +1,6 @@
 <template>
   <navSeries></navSeries>
-  <router-view></router-view>
+  <router-view :key="key"></router-view>
 </template>
 
 <script lang="ts">
@@ -11,6 +11,11 @@ export default defineComponent({
   name: "series",
   components: {
     navSeries,
+  },
+  computed: {
+    key() {
+      return this.$route.fullPath;
+    },
   },
 });
 </script>

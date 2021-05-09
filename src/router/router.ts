@@ -28,6 +28,7 @@ const router = createRouter({
         { path: 'horror', name: 'series/horror', component: () => import('../components/Series/Cate/CateHorror.vue') },
         { path: 'comic', name: 'series/comic', component: () => import('../components/Series/Cate/CateComic.vue') },
         // { path: ':cate', component: () => import('../components/Series/Cate.vue') },
+        { path: 'search', name: 'series/search', component: () => import('../components/Series/SearchSeries.vue') },
         { path: 'video/:vid', name: 'series/video', component: () => import('../components/Series/Video.vue') },
       ],
     },

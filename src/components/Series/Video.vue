@@ -5,9 +5,7 @@
       <div class="mt-2 text-left font-tp text-3xl text-gray-400 tracking-wide">
         <p class="inline">{{ v.name_cn }}</p>
         <p class="inline ml-4 text-4xl">{{ v.name_en }}</p>
-        <p class="inline font-semibold text-gray-500">
-          ({{ v.date.substr(0, 4) }})
-        </p>
+        <p class="inline font-semibold text-gray-500">({{ v.year }})</p>
       </div>
       <!-- 主体 -->
       <div class="flex flex-row mt-4 w-full">
@@ -49,7 +47,7 @@
           <div>
             首播日期:
             <p class="v_info text-gray-400">
-              {{ v.date.substr(0, 10) }}
+              {{ v.date }}
             </p>
           </div>
           <div>
@@ -75,7 +73,7 @@
               :href="v.douban_url"
               target="_blank"
             >
-              {{ v.douban_url.split("/")[4] }}
+              {{ v.douban }}
             </a>
           </div>
           <div>
@@ -85,7 +83,7 @@
               :href="v.imdb_url"
               target="_blank"
             >
-              {{ v.imdb_url.split("/")[4] }}
+              {{ v.imdb }}
             </a>
           </div>
         </div>
@@ -135,6 +133,10 @@ export default defineComponent({
         .get("/api/getVideo?vid=" + this.vid)
         .then((response) => {
           this.v = response.data[0];
+          this.v.douban = this.v.douban_url.split("/")[4];
+          this.v.imdb = this.v.imdb_url.split("/")[4];
+          this.v.year = this.v.date.substr(0, 4);
+          this.v.date = this.v.date.substr(0, 10);
         })
         .catch((error) => {
           console.log(error);
@@ -149,6 +151,6 @@ export default defineComponent({
   @apply inline;
   @apply ml-2;
   @apply text-xl;
-  @apply font-re;
+  @apply font-ph;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content space-x-4">
     <!-- 主体grid -->
     <div
       class="g grid grid-cols-5 gap-x-4 float-right overflow-auto justify-items-center h-full w-3/4 pt-4 px-6"
@@ -16,7 +16,7 @@
         </div>
         <!-- 文字 -->
         <div
-          class="w-sv mt-3 rounded justify-center text-center h-6 bg-gray-800 shadow-2xl"
+          class="w-sv mt-5 rounded justify-center text-center h-8 bg-gray-800 shadow-2xl"
         ></div>
       </div>
     </div>

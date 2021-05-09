@@ -1,7 +1,8 @@
 <template>
-  <div class="content" v-if="!isNull">
+  <div class="content space-x-4" v-if="!isNull">
     <!-- 主体grid -->
     <div
+      id="g"
       class="grid grid-cols-5 gap-x-4 float-right overflow-auto justify-items-center h-full w-3/4 pt-4 px-6"
     >
       <!-- 容器 -->
@@ -23,23 +24,24 @@
         </div>
         <!-- 文字 -->
         <div
-          class="flex flex-row flex-auto flex-nowrap w-sv space-x-2 mt-5 font-serif justify-center text-center h-auto"
+          class="flex flex-row flex-auto flex-nowrap w-sv space-x-2 mt-5 justify-center text-center h-auto"
         >
           <p
             @click="toVideo(v.video_id)"
-            class="flex-auto text-xl text-gray-400 tracking-widest hover:text-blue-400 cursor-pointer truncate text-right"
+            class="flex-auto text-xl font-serif text-gray-400 tracking-widest hover:text-blue-400 cursor-pointer truncate text-right"
             :title="v.name_cn"
           >
             {{ v.name_cn }}
           </p>
-          <strong class="flex-auto text-red-500 text-xl font-bold text-left">{{
-            v.score
-          }}</strong>
+          <strong
+            class="flex-auto font-ph tracking-widest text-red-500 text-xl font-bold text-left"
+            >{{ v.score }}</strong
+          >
         </div>
       </div>
       <!-- 按钮 -->
       <div
-        class="mt-2 col-start-1 col-end-6 space-x-6 flex flex-row justify-start font-mono text-base tracking-widest text-gray-400 w-full h-9"
+        class="mt-2 col-start-1 col-end-6 space-x-6 flex flex-row justify-start font-ph text-base tracking-widest text-gray-400 w-full h-9"
         v-show="isShowBtn"
       >
         <button
@@ -106,17 +108,17 @@
           </div>
           <!-- 文字 -->
           <div
-            class="flex flex-row flex-auto flex-nowrap w-sr space-x-1 mt-2 font-serif justify-center text-center"
+            class="flex flex-row flex-auto flex-nowrap w-sr space-x-1 mt-2 justify-center text-center"
           >
             <p
               @click="toVideo(r.video_id)"
-              class="flex-auto text-base tracking-widest text-gray-400 hover:text-blue-400 cursor-pointer truncate text-right"
+              class="flex-auto text-base font-serif tracking-widest text-gray-400 hover:text-blue-400 cursor-pointer truncate text-right"
               :title="r.name_cn"
             >
               {{ r.name_cn }}
             </p>
             <strong
-              class="flex-auto text-base font-bold text-red-500 text-left"
+              class="flex-auto text-base font-ph tracking-widest font-bold text-red-500 text-left"
               >{{ r.score }}</strong
             >
           </div>
@@ -152,13 +154,16 @@ export default defineComponent({
   },
   methods: {
     toVideo(vid: string) {
-      // let sv = "SV" + vid.substr(0, 16);
-      let v_url = this.$router.resolve({
+      // 跳转到新页面
+      // let v_url = this.$router.resolve({
+      //   name: "series/video",
+      //   params: { vid: vid },
+      // });
+      // window.open(v_url.href, "_blank");
+      this.$router.push({
         name: "series/video",
         params: { vid: vid },
-        // query: { vid: vid },
       });
-      window.open(v_url.href, "_blank");
     },
     showAll() {
       this.isEnd = true;

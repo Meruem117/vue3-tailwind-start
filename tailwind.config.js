@@ -4,11 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'mun': ['Munsteria'],
         'twi': ['Twilight'],
         'tp': ['type'],
-        'zy': ['zy'],
-        're': ['regular'],
+        'ph': ['ali_ph'],
       },
       colors: {
         'bg-dark': '#1e2228',
