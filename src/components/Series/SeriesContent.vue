@@ -126,8 +126,8 @@
       </div>
     </div>
   </div>
-  <div class="content text-gray-400 text-2xl" v-else>
-    Sorry, there is no data
+  <div class="content mt-5 ml-5 text-gray-400 text-3xl" v-else>
+    Sorry, there is no data...
   </div>
 </template>
 

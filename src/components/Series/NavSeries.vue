@@ -59,21 +59,14 @@ export default defineComponent({
   name: "navSeries",
   data() {
     return {
-      seriesNav: [
-        { cate: "首页", cname: "home", path: "/series/home" },
-        { cate: "剧情/历史", cname: "plot", path: "/series/plot" },
-        { cate: "动作/悬疑", cname: "action", path: "/series/action" },
-        { cate: "魔幻/科幻", cname: "fiction", path: "/series/fiction" },
-        { cate: "生活/喜剧", cname: "life", path: "/series/life" },
-        { cate: "恐怖/惊悚", cname: "horror", path: "/series/horror" },
-        { cate: "动漫/卡通", cname: "comic", path: "/series/comic" },
-      ],
-      active: "首页",
+      seriesNav: this.$store.state.seriesNav,
+      active: this.$store.state.seriesCate,
     };
   },
   methods: {
     selected(cate) {
-      this.active = cate;
+      // this.active = cate;
+      this.$store.commit("setSeriesCate", cate);
     },
     search() {
       let sc = this.$refs.getSearchContent.value;

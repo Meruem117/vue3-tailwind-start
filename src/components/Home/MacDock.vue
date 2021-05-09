@@ -28,38 +28,7 @@ export default defineComponent({
   name: "dock",
   data() {
     return {
-      icons: [
-        {
-          name: "Home",
-          img:
-            "https://cdn3.iconfinder.com/data/icons/luchesa-vol-9/128/Home-512.png",
-          path: "/home",
-        },
-        {
-          name: "Series",
-          img:
-            "https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/video-128.png",
-          path: "/series",
-        },
-        {
-          name: "Car",
-          img:
-            "https://cdn3.iconfinder.com/data/icons/back-to-the-future/512/delorean-01-128.png",
-          path: "/home",
-        },
-        {
-          name: "Game",
-          img:
-            "https://cdn3.iconfinder.com/data/icons/luchesa-vol-9/128/Toy-128.png",
-          path: "/home",
-        },
-        {
-          name: "Animal",
-          img:
-            "https://cdn2.iconfinder.com/data/icons/free-version/128/recycling-128.png",
-          path: "/home",
-        },
-      ],
+      icons: this.$store.state.icons,
     };
   },
 });
