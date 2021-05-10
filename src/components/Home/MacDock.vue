@@ -13,15 +13,13 @@
         <img :src="icon.img" class="w-full h-full" />
         <div
           class="title absolute left-1/2 -top-16 bg-pan-dark p-2 rounded opacity-0 text-gray-400 transition-all duration-200 transform -translate-x-1/2"
-        >
-          {{ icon.name }}
-        </div>
+        >{{ icon.name }}</div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 
 export default defineComponent({

@@ -1,6 +1,18 @@
-# my-project
+# Vue3_Stitcher
+
+A Vue3 project built with vue-cli and it uses tailwind css. 
+
+The code will be reformatted after I finish most of the project and studying.
+
+## Version
+
+<details>
+    <summary>release note</summary>
+    <h3>v 0.1.1</h3>
+</details>
 
 ## Project setup
+
 ```
 yarn install
 ```

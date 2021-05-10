@@ -13,12 +13,9 @@
             active == nav.cate,
         }"
         @click="selected(nav.cate)"
-        >{{ nav.cate }}</router-link
-      >
+      >{{ nav.cate }}</router-link>
     </div>
-    <div
-      class="flex flex-row-reverse align-middle items-center h-full w-auto py-2 ml-6"
-    >
+    <div class="flex flex-row-reverse align-middle items-center h-full w-auto py-2 ml-6">
       <button
         class="outline-none focus:outline-none h-4/5 w-12 border-2 border-gray-400 rounded-3xl rounded-l-none hover:bg-blue-700 active:bg-blue-800"
         @click="search()"
@@ -32,7 +29,7 @@
           stroke="currentColor"
           viewBox="0 0 24 24"
         >
-          <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
       </button>
       <input
@@ -42,9 +39,7 @@
         ref="getSearchContent"
       />
     </div>
-    <div
-      class="flex flex-auto flex-nowrap h-full w-auto items-center justify-end mr-8"
-    >
+    <div class="flex flex-auto flex-nowrap h-full w-auto items-center justify-end mr-8">
       <div
         class="w-12 h-12 float-right bg-cover rounded-full bg-center absolute"
         style="background-image: url(../../../static/img/V.jpg)"
