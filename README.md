@@ -1,4 +1,4 @@
-# Vue3_Stitcher
+# Vue3_Tailwind_start
 
 A Vue3 project built with vue-cli and it uses tailwind css. 
 
